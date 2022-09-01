@@ -52,16 +52,15 @@ int main()
 
 
         // EXCERCISE 3
-
-    
+  
     std::string insultOne = "You're a ";
-    std::string insultTwo = "Donkey \n";
+    std::string insultTwo = "Donkey";
 
     // Combine the two strings
     std::string insultFull = insultOne + insultTwo;
 
     // Print the combined string
-    std::cout << insultFull;
+    std::cout << insultFull << "\n";
 
 
         // EXCERCISE 4
@@ -74,7 +73,8 @@ int main()
     std::size_t wordPos = sentance.find(codeWord);
 
     // Print the position
-    std::cout << wordPos;
+    std::cout << "Codeword position: " << wordPos << "\n";
+
 
         // EXCERCISE 5
 
@@ -104,7 +104,7 @@ int main()
     std::string userWord;
 
     // User input
-    std::cout << "Enter a bad word \n";
+    std::cout << "Enter the 'bad' word \n";
     std::cin >> userWord;
 
     if (userWord == badWord)
@@ -113,8 +113,9 @@ int main()
     }
     else
     {
-        std::cout << userWord;
+        std::cout << userWord << "\n";
     }
+
 
         // EXERCISE 7
 
@@ -134,14 +135,16 @@ int main()
             std::cout << "There are " << numberOfBottles << " bottles on the wall \n";
             std::cout << "Would you like to drink a bottle? (Y/N) \n";
             std::cin >> decision;
-        } while (decision != "Y");
 
-        if (decision == "Y")
-        {
-            numberOfBottles--;
-            std::cout << "There are now " << numberOfBottles << " bottles on the wall \n";
-        }
-    } while (numberOfBottles > 0);
+         // Loop back until user answers "Y"
+        } while (decision != "Y");      
+
+        // Reduce number of bottles by 1 and print new number
+          numberOfBottles--;
+          std::cout << "There are now " << numberOfBottles << " bottles on the wall \n";
+        
+      // Loop until number of bottles = 0
+    } while (numberOfBottles > 0);  
    
    
     

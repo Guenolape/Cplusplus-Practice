@@ -94,7 +94,59 @@ int main()
     std::cin >> day;
 
     // Print full birthday
-    std::cout << "Your birthday is the " << day << " of " << month << " " << year;
+    std::cout << "Your birthday is the " << day << " of " << month << " " << year << "\n";
+
+
+        // EXERCISE 6
+
+    // Declare variables
+    std::string badWord = "bad";
+    std::string userWord;
+
+    // User input
+    std::cout << "Enter a bad word \n";
+    std::cin >> userWord;
+
+    if (userWord == badWord)
+    {
+        std::cout << "BEEP \n";
+    }
+    else
+    {
+        std::cout << userWord;
+    }
+
+        // EXERCISE 7
+
+    // Declare variables
+    int numberOfBottles = 0;
+    std::string decision;
+    bool decisionBool = false;
+
+    // User input
+    std::cout << "How many bottles are on the wall? \n";
+    std::cin >> numberOfBottles;
+
+    do
+    {
+        do
+        {
+            std::cout << "There are " << numberOfBottles << " bottles on the wall \n";
+            std::cout << "Would you like to drink a bottle? (Y/N) \n";
+            std::cin >> decision;
+        } while (decision != "Y");
+
+        if (decision == "Y")
+        {
+            numberOfBottles--;
+            std::cout << "There are now " << numberOfBottles << " bottles on the wall \n";
+        }
+    } while (numberOfBottles > 0);
+   
+   
+    
+
+
 
 
 

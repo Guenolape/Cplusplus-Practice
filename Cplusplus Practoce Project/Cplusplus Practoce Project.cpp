@@ -4,10 +4,50 @@
 #include <iostream>
 #include <string>
 
+
+void BasicFunction()
+{
+    std::cout << "Basic function ran\n";
+}
+
 int main()
 {
 
-        // EXCERCISE 1
+    BasicFunction();
+
+    //// While loops
+    //bool whileB = true;
+
+    //while (whileB = true)
+    //{
+    //    whileB = false;
+    //}   
+
+   /* int i = 0;
+    do
+    {
+        i++;
+        std::cout << "This loop ran " << i << " times\n";   
+    } while (i < 100);*/
+    
+
+    int numberOfPages = 0;
+    std::string googleString = "G";
+
+    std::cout << "How many pages are there? \n";
+    std::cin >> numberOfPages;
+    
+
+    for (int i = 0; i < numberOfPages; i++)
+    {
+        googleString += "o";
+    }
+    googleString += "gle\n";
+
+    std::cout << googleString;
+
+
+  /**      // EXCERCISE 1
     
      //Declare variables
     int perimeter = 0;
@@ -144,12 +184,84 @@ int main()
           std::cout << "There are now " << numberOfBottles << " bottles on the wall \n";
         
       // Loop until number of bottles = 0
-    } while (numberOfBottles > 0);  
+    } while (numberOfBottles > 0);  */
    
    
     
 
 
+
+
+
+
+
+    // Practice problem
+    int decision = 0;
+
+    // User input
+    std::cout << "Would you like to go North, East, South or West? (1-4)\n";
+    std::cin >> decision;
+
+    switch (decision)
+    {
+    case 1:
+    {
+        std::cout << "You go North and come across a dense woodland";
+        break;
+    }
+    case 2:
+    {
+        std::cout << "You go East and come across an abandoned beach";
+        break;
+    }
+    case 3:
+    {
+        std::cout << "You go South and come across a ruined fortress";
+        break;
+    }
+    case 4:
+    {
+        std::cout << "You go West and come across deserted farmland";
+        break;
+    }
+    default:
+    {
+        std::cout << "That is not a valid direction";
+        break;
+    }
+
+
+    }
+
+
+
+    int switchInt = 2;
+
+    switch (switchInt)
+    {
+    case 0: 
+    {
+        std::cout << "Error was 0";
+        break;
+    }
+        
+
+    case 1:
+    {
+        std::cout << "Error was 1";
+        break;
+    }
+    case 2:
+    {
+        std::cout << "Error was 2";
+        break;
+    }
+    default:
+    {
+        std::cout << "Error was unrecognised";
+        break;
+    }       
+    }
 
 
 
@@ -218,18 +330,18 @@ int main()
     //std::cout << lineOfText;
 
 
-    //
-    //// SELECTION
-    //bool decision = true;
-    //if (decision == true)
-    //{
-    //    std::cout << "Decision was true! \n";
-    //}
-    //else
-    //{
-    //    std::cout << "Decision was false \n";
-    //}
-}
+    
+//    // SELECTION
+//    bool decision = true;
+//    if (decision == true)
+//    {
+//        std::cout << "Decision was true! \n";
+//    }
+//    else
+//    {
+//        std::cout << "Decision was false \n";
+    //  }
+}   
 
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

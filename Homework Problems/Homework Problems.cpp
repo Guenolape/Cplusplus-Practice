@@ -23,12 +23,8 @@ int RandomFunction(int lowerRange, int upperRange)
 int main()
 {
 
-   
-        
-
-
-    /*
-    // EXERCISE 1
+     
+        // EXERCISE 1
 
     //Declare variables
     int perimeter = 0;
@@ -51,9 +47,11 @@ int main()
         << "Perimeter = " << perimeter << "\n";
 
 
-    // EXERCISE 2
 
-// Declare variables
+
+        // EXERCISE 2
+    
+    // Declare variables
     int timeHours = 0;
     int timeMinutes = 0;
     int timeSeconds = 0;
@@ -72,7 +70,8 @@ int main()
 
 
 
-    // EXERCISE 3
+
+        // EXERCISE 3
 
     std::string insultOne = "You're a ";
     std::string insultTwo = "Donkey";
@@ -84,7 +83,9 @@ int main()
     std::cout << insultFull << "\n";
 
 
-    // EXERCISE 4
+
+
+        // EXERCISE 4
 
 // Declare variables
     std::string codeWord = "codeword";
@@ -97,7 +98,9 @@ int main()
     std::cout << "Codeword position: " << wordPos << "\n";
 
 
-    // EXERCISE 5
+
+
+        // EXERCISE 5
 
 // Declare variables
     int year = 0;
@@ -118,7 +121,9 @@ int main()
     std::cout << "Your birthday is the " << day << " of " << month << " " << year << "\n";
 
 
-    // EXERCISE 6
+
+
+        // EXERCISE 6
 
 // Declare variables
     std::string badWord = "bad";
@@ -138,7 +143,9 @@ int main()
     }
 
 
-    // EXERCISE 7
+
+
+     // EXERCISE 7
 
 // Declare variables
     int numberOfBottles = 0;
@@ -167,6 +174,9 @@ int main()
         // Loop until number of bottles = 0
     } while (numberOfBottles > 0); ;
 
+
+
+
     // EXERCISE 8
     int width = 0;
     int height = 0;
@@ -193,8 +203,34 @@ int main()
         std::cout << RandomFunction(minScore, maxScore) << "\n";
     }
 
+
+
+
+        // EXERCISE 10
+
+   // Declare Vector
+    std::vector<std::string> stringVector;
+    std::string name;
+    std::string choice;
+
+    do
+    {
+        // Add names to vector
+        std::cout << "Enter a name: \n";
+        std::cin >> name;
+
+        stringVector.push_back(name);
+        std::cout << "Would you like to enter another name? (Y/N) \n";
+        std::cin >> choice;
+    } while (choice == "Y" || choice == "y");
+
+    std::cout << "The names of your party members are: \n";
+    // Print names
+    for (int i = 0;i < stringVector.size(); i++)
+    {
+        std::cout << stringVector[i] << "\n";
+    }
     
-    */
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

@@ -3,6 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include <stdlib.h> // To use rand()
+#include <time.h>   // To seed rand()
 
 
 void BasicFunction()
@@ -10,25 +13,123 @@ void BasicFunction()
     std::cout << "Basic function ran\n";
 }
 
+void ParameterFunction(int paramInt)
+{
+    ++paramInt;
+    std::cout << "Parameter function ran, paramInt = " << paramInt;
+}
+
+int ReturnFunction()
+{
+    return 42;
+}
+
+int RandomFunction(int lowerRange, int upperRange)
+{
+    std::srand(time(NULL));
+    int range = upperRange - lowerRange;
+    int randomNumber = std::rand() % range + lowerRange;
+    return randomNumber;
+}
+
 int main()
 {
+    // Generate a random number between 0 and RAND_MAX (very large)
+    int randomNumber = std::rand();
+    std::cout << "Random number is " << randomNumber << "\n";
 
+    // A seed is a starting point for the random number calculations
+    std::srand(time(NULL));         
+
+    int lowerNumber = 50;
+    int upperNumber = 150;
+    int range = upperNumber - lowerNumber;
+    int seededRandom = std::rand() % range + lowerNumber;
+    std::cout << "Seeded random number is: " << seededRandom << "\n";
+
+
+
+    /*
+    // Declare a vector
+    std::vector<int> intVector;
+
+    // Add items to vector using push_back
+    // push_back adds items to the back end of the vector
+
+    
+
+    intVector.push_back(1);         // Vector = {1}
+    intVector.push_back(2);         // Vector = {1, 2}
+    intVector.push_back(189);       // Vector = {1, 2, 189}
+    intVector.push_back(40);        // Vector = {1, 2, 189, 40}
+    intVector.push_back(117);       // Vector = {1, 2, 189, 40, 117}
+
+    // You can get the current size of the vector using vectorName.size
+    std::cout << "Vector size is " << intVector.size() << "\n";
+
+
+    // You can access items in a vector just like an array using []
+    std::cout << "Vector index 1 is " << intVector[1] << "\n";
+
+
+    // Change the value of an item
+    // The item must already exist
+    intVector[1] = 5;
+    std::cout << "Vector index 1 is " << intVector[1] << "\n";
+
+
+    // Items can be removed using the erase() function, using iterators
+    // An iterator is a marker for a particular point in a vector 
+    
+    // Lets erase the first 2 elements
+    // Parameter 1 - starting point
+    // Parameter 2 - end BEFORE this point
+
+    // Vector = {1, 2, 189, 40, 117}
+    intVector.erase(intVector.begin(), intVector.begin() + 2);              // Erase everything between vector startpoint, and startpoint + 2
+
+    std::cout << "Vector size is " << intVector.size() << "\n";
+    std::cout << "Vector index 0 is " << intVector[0] << "\n";
+
+    
+
+    // Loop through vector and print all items
+    for (int i = 0; i < intVector.size(); i++)
+    {
+        std::cout << "Vector index " << i << " is " << intVector[i] << "\n";
+    }
+
+    
+    void EarlyDeclare();
+    EarlyDeclare();
     BasicFunction();
 
-    //// While loops
-    //bool whileB = true;
+    // This is the same as saying paramInt = 5
+    int testInt = 5;
+    ParameterFunction(testInt);
 
-    //while (whileB = true)
-    //{
-    //    whileB = false;
-    //}   
+    ReturnFunction();
+ 
+    // Static Array
+    int intArray[] = { 0, 1, 2 };
+    const int intArraySize = 3;
+    int intArrayB[intArraySize];
 
-   /* int i = 0;
+    
+    // While loops
+    bool whileB = true;
+
+    while (whileB = true)
+    {
+        whileB = false;
+    }   
+
+    int i = 0;
     do
     {
         i++;
         std::cout << "This loop ran " << i << " times\n";   
-    } while (i < 100);*/
+    } while (i < 100);
     
 
     int numberOfPages = 0;
@@ -47,7 +148,7 @@ int main()
     std::cout << googleString;
 
 
-  /**      // EXCERCISE 1
+      // EXCERCISE 1
     
      //Declare variables
     int perimeter = 0;
@@ -184,25 +285,19 @@ int main()
           std::cout << "There are now " << numberOfBottles << " bottles on the wall \n";
         
       // Loop until number of bottles = 0
-    } while (numberOfBottles > 0);  */
+    } while (numberOfBottles > 0);  
    
    
     
 
-
-
-
-
-
-
     // Practice problem
-    int decision = 0;
+    int choice = 0;
 
     // User input
     std::cout << "Would you like to go North, East, South or West? (1-4)\n";
-    std::cin >> decision;
+    std::cin >> choice;
 
-    switch (decision)
+    switch (choice)
     {
     case 1:
     {
@@ -263,85 +358,18 @@ int main()
     }       
     }
 
+    */
 
 
 
-
-    //// Variable Types Examples
-    //int testInt = 100;
-    //unsigned testUnsigned = 100u;
-    //float testFloat = 0.5f;
-    //double testDouble = 0.5;
-    //bool testBool = true;
-
-    //char testChar = 'b';
-    //char firstNameOld[] = "Owen";
-
-    //std::string firstName = "Owen";
-    //std::string lastName = "Nicoll";
-
-    //std::string fullName = firstName + " " + lastName;
-
-    //float result = 50 % 100;
-
-    //std::string testString = "No";
-
-    //char firstInitial = fullName[0];
-
-    //std::string initials = fullName.substr(0, 1);
-
-    //// Find the position in the string and store it in a variable of type size_t (like an int)
-    //std::size_t spacePos = fullName.find(" ");
-    //initials += fullName.substr(spacePos + 1, 1);
-
-    //
-    //std::string paragraph = "A paragraph (from Ancient Greek παράγραφος (parágraphos) 'to write beside') is a self-contained unit of discourse in writing dealing with a particular point or idea.";
-
-    //paragraph = paragraph.substr(0, 20);
-
-    //
-    //// USER INPUT
-    //std::cout << "Please enter a word. \n";
-
-    //// A variable to store the user input
-    //std::string entryString;
-
-    //// Get user input
-    //std::cin >> entryString;
-
-    //// Print the user's word
-    //std::cout << "You typed: " << entryString << "!\n";
-
-    //// We can also input things other than strings
-    //int entryInt;
-    //std::cout << "Please enter a whole number. \n";
-    //std::cin >> entryInt;
-    //std::cout << "You typed: " << entryInt << "\n";
+   
+} 
 
 
-    //float entryFloat;
-    //std::cout << "Enter a number with a decimal place \n";
-    //std::cin >> entryFloat;
-    //std::cout << "You typed " << entryFloat << "\n";
-    //
-    //std::string lineOfText;
-    //std::cout << "Please enter a line of text \n";
-    //std::getline(std::cin, lineOfText);
-    //std::cout << lineOfText;
-
-
-    
-//    // SELECTION
-//    bool decision = true;
-//    if (decision == true)
-//    {
-//        std::cout << "Decision was true! \n";
-//    }
-//    else
-//    {
-//        std::cout << "Decision was false \n";
-    //  }
-}   
+void EarlyDeclare()
+{
+    std::cout << "Early declare function ran \n";
+}
 
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

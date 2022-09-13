@@ -32,8 +32,22 @@ int RandomFunction(int lowerRange, int upperRange)
     return randomNumber;
 }
 
+int RectangleFunction(int width, int height)
+{
+    int area = width * height;
+    return area;
+}
+
 int main()
 {
+
+
+
+
+
+
+
+
     // Generate a random number between 0 and RAND_MAX (very large)
     int randomNumber = std::rand();
     std::cout << "Random number is " << randomNumber << "\n";
@@ -46,8 +60,6 @@ int main()
     int range = upperNumber - lowerNumber;
     int seededRandom = std::rand() % range + lowerNumber;
     std::cout << "Seeded random number is: " << seededRandom << "\n";
-
-
 
     /*
     // Declare a vector
